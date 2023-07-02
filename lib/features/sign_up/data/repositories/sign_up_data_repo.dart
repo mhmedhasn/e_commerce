@@ -9,5 +9,5 @@ class SignUpDataRepo implements SignUpDomainRepo{
   SignUpDataSources signUpDataSources;
   SignUpDataRepo(this.signUpDataSources);
   @override
-  Future<Either<Failures, SignUpEntity>> signUp(UserData userData)=>signUpDataSources.signUp( userData);
+  Future<Either<Failures, SignUpEntity>> signUp(UserData userData)=>signUpDataSources.signUp(userData);
 }

@@ -14,7 +14,14 @@ class RemoteDataSources implements SignUpDataSources {
   Future<Either<Failures,SignUpModels>> signUp(UserData userData) async {
     try {
       var response = await dio.post("${Constants.baseApiUrl}${EndPoint.signUp}",
-          data: userData.toJson());
+          data: {
+            'name': userData.name,
+            'phone' : userData.phone,
+            'password' : userData.password,
+            'rePassword' : userData.rePassword,
+            'email': userData.email,
+
+          });
       SignUpModels signUpModels = SignUpModels.fromJson(response.data);
       return Right(signUpModels);
     } catch (e) {

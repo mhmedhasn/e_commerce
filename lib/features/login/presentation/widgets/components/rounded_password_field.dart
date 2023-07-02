@@ -4,34 +4,28 @@ import 'package:flutter/material.dart';
 import 'rounded_input_text_field.dart';
 
 class RoundedPasswordField extends StatelessWidget {
-  String hintPass="";
-  final ValueChanged<String> onChanged;
-  final TextEditingController TextController;
-   RoundedPasswordField({
-     required this.TextController,
-    required this.hintPass,
+  const RoundedPasswordField({
     Key? key,
     required this.onChanged,
   }) : super(key: key);
 
-
+  final ValueChanged<String> onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextFormField(
-        controller: TextController,
+      child: TextField(
         obscureText: true,
         onChanged: onChanged,
-        decoration:  InputDecoration(
-          hintText: hintPass,
-          icon: const Icon(
+        decoration: const InputDecoration(
+          hintText: "Password",
+          icon: Icon(
             Icons.lock,
-            color: AppColor.cPrimaryColor,
+            color: AppColor. cPrimaryColor,
           ),
-          suffixIcon:const Icon(
+          suffixIcon: Icon(
             Icons.visibility,
-            color: AppColor.cPrimaryColor,
+            color:  AppColor.cPrimaryColor,
           ),
           border: InputBorder.none,
         ),

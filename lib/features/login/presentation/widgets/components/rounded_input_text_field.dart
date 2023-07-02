@@ -1,15 +1,15 @@
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
+
 class RoundedInputTextField extends StatelessWidget {
   const RoundedInputTextField({
-    required this.TextController,
     Key? key,
     required this.hintText,
     this.icon = Icons.person,
     required this.onChanged,
   }) : super(key: key);
- final TextEditingController TextController;
+
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
@@ -17,13 +17,12 @@ class RoundedInputTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-        child: TextFormField(
-          controller:TextController ,
+        child: TextField(
       onChanged: onChanged,
       decoration: InputDecoration(
         icon: Icon(
           icon,
-          color:AppColor. cPrimaryColor,
+          color: AppColor. cPrimaryColor,
         ),
         hintText: hintText,
         border: InputBorder.none,
@@ -49,7 +48,7 @@ class TextFieldContainer extends StatelessWidget {
       width: size.width * 0.8,
       //height: size.height * 0.06,
       decoration: BoxDecoration(
-        color:AppColor. cPrimaryLightColor,
+        color: AppColor. cPrimaryLightColor,
         borderRadius: BorderRadius.circular(25),
       ),
       child: child,

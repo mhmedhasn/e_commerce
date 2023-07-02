@@ -37,6 +37,7 @@ class SignUpScreen extends StatelessWidget {
           return  Scaffold(
             extendBodyBehindAppBar: true,
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               iconTheme: IconThemeData(color:AppColor.cPrimaryColor),
               backgroundColor:Colors.transparent,
 
