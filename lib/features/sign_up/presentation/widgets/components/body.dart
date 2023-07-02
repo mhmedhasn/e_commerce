@@ -1,4 +1,5 @@
 import 'package:e_commerce/features/login/presentation/pages/login_screen.dart';
+import 'package:e_commerce/features/sign_up/presentation/manager/cubit.dart';
 import 'package:e_commerce/features/sign_up/presentation/widgets/components/already_have_an_acount_check.dart';
 import 'package:e_commerce/features/sign_up/presentation/widgets/components/rounded_button.dart';
 import 'package:e_commerce/features/sign_up/presentation/widgets/components/rounded_input_text_field.dart';
@@ -33,26 +34,37 @@ class Body extends StatelessWidget {
               // SizedBox(height: size.height * 0.12),
 
               RoundedInputTextField(
+                TextController: SignUpCubit.get(context).nameController,
                 hintText: "Name",
-                onChanged: (value) {},
+                onChanged: (value) {
+                  return null;
+
+                },
                 icon: Icons.drive_file_rename_outline,
               ),
               RoundedInputTextField(
+                TextController: SignUpCubit.get(context).emailController,
                 hintText: "Examble@gmail.com",
                 onChanged: (value) {},
                 icon: Icons.person,
               ),
-              RoundedPasswordField(hintPass: "Password",onChanged: (value) {}),
-              RoundedPasswordField(hintPass: "RePassword",onChanged: (value) {}),
-
+              RoundedPasswordField(
+                  TextController: SignUpCubit.get(context).passwordController,
+                  hintPass: "Password",onChanged: (value) { return null;}),
+              RoundedPasswordField(
+                  TextController: SignUpCubit.get(context).rePasswordController,
+                  hintPass: "RePassword",onChanged: (value) { return null;}),
               RoundedInputTextField(
+                TextController:SignUpCubit.get(context).phoneController,
                 hintText: "Phone",
-                onChanged: (value) {},
+                onChanged: (value) { return null;},
                 icon: Icons.phone,
               ),
               RoundedButton(
                 text: "Sign Up",
-                press: () {},
+                press: () {
+                  SignUpCubit.get(context).signUp();
+                },
               ),
               SizedBox(height: size.height * 0.03),
               AlreadyHaveAnAcountCheck(

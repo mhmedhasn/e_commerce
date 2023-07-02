@@ -17,18 +17,11 @@ class BodyWelcome extends StatelessWidget {
     return Background(
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(horizontal:70,vertical: 20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const Text(
-                "Welcome To Authentication",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: AppColor.cPrimaryColor
-                ),
-              ),
+
               SizedBox(height: size.height * 0.05),
               SvgPicture.asset(
                 "assets/icons/chat.svg",

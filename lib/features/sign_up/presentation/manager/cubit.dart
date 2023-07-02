@@ -15,21 +15,22 @@ class SignUpCubit extends Cubit<SignUpStates> {
 
   static SignUpCubit get(context) => BlocProvider.of(context);
 
-  signUp() async {
+  var nameController = TextEditingController();
+  var phoneController = TextEditingController();
+  var passwordController = TextEditingController();
+  var rePasswordController = TextEditingController();
+  var emailController = TextEditingController();
+  void signUp() async {
     emit(SignUpLoadingStates());
-    var nameController = TextEditingController();
-    var phoneController = TextEditingController();
-    var passwordController = TextEditingController();
-    var rePasswordController = TextEditingController();
-    var emailController = TextEditingController();
     SignUpDomainRepo signUpDomainRepo = SignUpDataRepo(signUpDataSources);
     SignUpUseCase signUpUseCase = SignUpUseCase(signUpDomainRepo);
     UserData userData = UserData(
-        name: nameController.text,
-        phone: phoneController.text,
-        password: passwordController.text,
-        rePassword: rePasswordController.text,
-        email: emailController.text);
+        name: "Ahmed Abd Al-Muti",
+        email:"ahmedmutti01@gmail.com",
+        password:"Ahmed@123",
+        rePassword:"Ahmed@123",
+        phone:"01010700700"
+    );
     var result = await signUpUseCase.call(userData);
     result.fold((l) {
       emit(SignUpErrorStates(l));

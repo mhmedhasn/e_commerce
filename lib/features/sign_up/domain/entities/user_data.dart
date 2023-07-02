@@ -12,13 +12,14 @@ class UserData {
         required this.rePassword,
       required this.email});
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['phone'] = this.phone;
-    data['password'] = this.password;
-    data['rePassword'] = this.rePassword;
-    data['email'] = this.email;
-    return data;
-  }
+//   Map<String, dynamic> toJson() {
+//     return  {
+//     'name': this.name,
+//    'phone' : this.phone,
+//     'password' : this.password,
+//     'rePassword' : this.rePassword,
+//    'email': this.email,
+//
+//   };
+// }
 }
