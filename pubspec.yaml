@@ -22,6 +22,7 @@ dependencies:
   animations: ^2.0.3
   font_awesome_flutter: ^10.1.0
   intl: ^0.17.0
+  flutter_snake_navigationbar: ^0.6.1
 
 
 dev_dependencies:
