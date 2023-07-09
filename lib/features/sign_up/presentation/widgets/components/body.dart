@@ -34,7 +34,7 @@ class Body extends StatelessWidget {
               // SizedBox(height: size.height * 0.12),
 
               RoundedInputTextField(
-                TextController: SignUpCubit.get(context).nameController,
+                textController: SignUpCubit.get(context).nameController,
                 hintText: "Name",
                 onChanged: (value) {
                   return null;
@@ -43,19 +43,19 @@ class Body extends StatelessWidget {
                 icon: Icons.drive_file_rename_outline,
               ),
               RoundedInputTextField(
-                TextController: SignUpCubit.get(context).emailController,
+                textController: SignUpCubit.get(context).emailController,
                 hintText: "Examble@gmail.com",
                 onChanged: (value) {},
                 icon: Icons.person,
               ),
               RoundedPasswordField(
-                  TextController: SignUpCubit.get(context).passwordController,
+                  textController: SignUpCubit.get(context).passwordController,
                   hintPass: "Password",onChanged: (value) { return null;}),
               RoundedPasswordField(
-                  TextController: SignUpCubit.get(context).rePasswordController,
+                  textController: SignUpCubit.get(context).rePasswordController,
                   hintPass: "RePassword",onChanged: (value) { return null;}),
               RoundedInputTextField(
-                TextController:SignUpCubit.get(context).phoneController,
+                textController:SignUpCubit.get(context).phoneController,
                 hintText: "Phone",
                 onChanged: (value) { return null;},
                 icon: Icons.phone,

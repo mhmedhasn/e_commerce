@@ -19,6 +19,10 @@ dependencies:
   flutter_bloc: ^8.1.3
   flutter_svg: ^1.1.0
   flutter_screenutil: ^5.7.0
+  animations: ^2.0.3
+  font_awesome_flutter: ^10.1.0
+  intl: ^0.17.0
+
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +39,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/introduction_animation/
   # fonts:
   #   - family: Schyler
   #     fonts:
