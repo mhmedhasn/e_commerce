@@ -30,7 +30,7 @@ class SignUpScreen extends StatelessWidget {
                       content: Text(state.failures.message ?? ''),
                     ));
           } else if (state is SignUpSuccessStates) {
-            Navigator.pushNamed(context, Routes.signUp);
+            Navigator.pushNamed(context, Routes.homeScreen);
           }
         },
         builder: (context, state) {
@@ -51,7 +51,7 @@ class SignUpScreen extends StatelessWidget {
                 fontSize: 30,
               ),
             ),),
-            body: Body(),
+            body: const Body(),
           );
         },
       ),

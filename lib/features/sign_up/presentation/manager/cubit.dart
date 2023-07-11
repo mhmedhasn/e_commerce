@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:e_commerce/features/sign_up/data/data_sources/sign_up_data_sources.dart';
 import 'package:e_commerce/features/sign_up/data/repositories/sign_up_data_repo.dart';
 import 'package:e_commerce/features/sign_up/domain/entities/user_data.dart';
@@ -25,17 +24,17 @@ class SignUpCubit extends Cubit<SignUpStates> {
     SignUpDomainRepo signUpDomainRepo = SignUpDataRepo(signUpDataSources);
     SignUpUseCase signUpUseCase = SignUpUseCase(signUpDomainRepo);
     UserData userData = UserData(
-        name: "Ahmed Abd Al-Muti",
-        email:"ahmedmutti01@gmail.com",
-        password:"Ahmed@123",
-        rePassword:"Ahmed@123",
-        phone:"01010700700"
+        name: nameController.text,
+        email:emailController.text,
+        password:passwordController.text,
+        rePassword:rePasswordController.text,
+        phone:phoneController.text,
     );
     var result = await signUpUseCase.call(userData);
     result.fold((l) {
       emit(SignUpErrorStates(l));
     }, (r) {
-      SignUpSuccessStates(r);
+    emit(SignUpSuccessStates(r));
     });
   }
 }
