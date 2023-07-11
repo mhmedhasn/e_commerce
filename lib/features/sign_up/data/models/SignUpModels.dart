@@ -8,16 +8,18 @@ class SignUpModels extends SignUpEntity {
   SignUpModels.fromJson(dynamic json)
       :this(
     message: json["message"],
-    user: User.fromJson(json['user'],),
     token: json["token"],
-
-  );
+    user: User.fromJson(json['user'],),);
 }
 
 class User extends UserEntities {
   String? role;
 
-  User({required  String name,required String email,this.role,}):super(name:name,email: email );
+  User({
+    required super.name,
+    required super.email,
+    this.role,
+  });
 
   User.fromJson(dynamic json) :this(email: json["email"],
       name: json["name"], role: json["role"]);
